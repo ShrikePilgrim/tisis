@@ -2,12 +2,13 @@
 
 @font-face {
   font-family: 'TreeLike';
-  src: url('../assets/fonts/TreeLike.ttf') format('truetype');
+  src: url('./assets/fonts/TreeLike.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 :root {
+  /* Global Font Settings */
   --font-heading: 'TreeLike', serif;
   --font-body: 'Lora', serif;
   --primary-color: #FFB200;
@@ -15,6 +16,18 @@
   --background-color: #000000;
   --text-color: #FAE8C8;
   --accent-color: #2A2A2A;
+
+  /* Desktop Grid Settings */
+  --desktop-column-width: 104px;
+  --desktop-gutter: 40px;
+
+  /* Tablet Grid Settings */
+  --tablet-column-width: 80px;
+  --tablet-gutter: 24px;
+
+  /*Mobile Grid Settings */
+  --mobile-column-width: 32px;
+  --mobile-gutter: 16px;
 }
 
 body {
@@ -25,4 +38,31 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
+}
+
+/* General grid container */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(12, var(--desktop-column-width));
+  grid-gap: var(--desktop-gutter);
+  margin: 0 auto; /* Center the content */
+  max-width: 1920px; /* Max width for desktop */
+}
+
+/* Tablet grid layout */
+@media screen and (max-width: 1194px) {
+  .grid-container {
+    grid-template-columns: repeat(12, var(--tablet-column-width));
+    grid-gap: var(--tablet-gutter);
+    max-width: 1194px;
+  }
+}
+
+/* Mobile grid layout */
+@media screen and (max-width: 375px) {
+  .grid-container {
+    grid-template-columns: repeat(6, var(--mobile-column-width));
+    grid-gap: var(--mobile-gutter);
+    max-width: 375px;
+  }
 }
