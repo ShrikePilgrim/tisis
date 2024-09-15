@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Playfair+Display:wght@400;600&display=swap');
 
 @font-face {
   font-family: 'TreeLike';
@@ -8,9 +9,7 @@
 }
 
 :root {
-  /* Global Font Settings */
-  --font-heading: 'TreeLike', serif;
-  --font-body: 'Lora', serif;
+  /* Global Color Scheme */
   --primary-color: #FFB200;
   --secondary-color: #996B00;
   --background-color: #000000;
@@ -18,26 +17,16 @@
   --accent-color: #2A2A2A;
 
   /* Desktop Grid Settings */
-  --desktop-column-width: 104px;
+  --desktop-column-width: auto;
   --desktop-gutter: 40px;
 
   /* Tablet Grid Settings */
-  --tablet-column-width: 80px;
+  --tablet-column-width: auto;
   --tablet-gutter: 24px;
 
   /*Mobile Grid Settings */
-  --mobile-column-width: 32px;
+  --mobile-column-width: auto;
   --mobile-gutter: 16px;
-}
-
-body {
-  font-family: var(--font-body);
-  color: var(--text-color);
-  background-color: var(--background-color);
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
 }
 
 /* General grid container */
@@ -45,24 +34,26 @@ h1, h2, h3, h4, h5, h6 {
   display: grid;
   grid-template-columns: repeat(12, var(--desktop-column-width));
   grid-gap: var(--desktop-gutter);
-  margin: 0 auto; /* Center the content */
-  max-width: 1920px; /* Max width for desktop */
+  margin-left: 104px;
+  margin-right: 104px;
 }
 
 /* Tablet grid layout */
-@media screen and (max-width: 1194px) {
+@media screen and (max-width: 1200px) {
   .grid-container {
     grid-template-columns: repeat(12, var(--tablet-column-width));
     grid-gap: var(--tablet-gutter);
-    max-width: 1194px;
+    margin-left: 32px;
+    margin-right: 32px;
   }
 }
 
 /* Mobile grid layout */
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 510px) {
   .grid-container {
     grid-template-columns: repeat(6, var(--mobile-column-width));
     grid-gap: var(--mobile-gutter);
-    max-width: 375px;
+    margin-left: 16px;
+    margin-right: 16px;
   }
 }

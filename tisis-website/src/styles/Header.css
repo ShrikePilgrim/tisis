@@ -1,0 +1,156 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  grid-column: 1 / 13;
+  width: 100%;
+  height: 62px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.logo {
+  font-family: 'TreeLike', serif;
+  font-size: 48px;
+  color: var(--primary-color);
+  user-select: none;
+}
+
+.nav ul {
+  display: flex;
+  list-style-type: none;
+}
+
+.nav li {
+  margin: 20px;
+  justify-content: center;
+}
+
+.nav a {
+  font-family: 'TreeLike', serif;
+  font-size: 24px;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: transform 0.3s ease, color 0.3s ease;
+  display: inline-block;
+}
+
+.nav a:hover {
+  color: var(--primary-color);
+  transform: scale(1.4);
+}
+
+.hamburger {
+  display: none;
+}
+
+.hamburger-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 70px;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  transition: right 0.5s ease;
+}
+
+.mobile-nav.open {
+  right: 0px;
+}
+
+.mobile-nav ul {
+  list-style: none;
+  padding: 20px;
+  text-align: right;
+}
+
+.mobile-nav li {
+  padding: 15px 0;
+}
+
+.mobile-nav a {
+  font-family: 'TreeLike', serif;
+  font-size: 24px;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: transform 0.3s ease, color 0.3s ease;
+  display: inline-block;
+}
+
+.mobile-nav a:hover {
+  color: var(--primary-color);
+  transform: scale(1.4);
+}
+
+/* Media queries */
+@media screen and (max-width: 1060px) {
+  .logo {
+    display: none;
+  }
+
+  .header {
+      justify-content: center;
+      width: 90%;
+  }
+
+  .nav li {
+    padding: 0px;
+  }
+
+  .nav a {
+    font-size: calc(10px + (20 - 12) * ((100vw) / (1294 - 510)));
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .nav a {
+    font-size: calc(5px + (20 - 12) * ((100vw) / (1294 - 510)));
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    top: 20px;
+    right: -50%;
+  }
+
+  .hamburger img {
+    width: 62px;
+    height: 62px;
+  }
+
+  .mobile-nav {
+    display: block;
+  }
+}
+
+/* Mobile Overlay Styles */
+.mobile-overlay {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99; /* Behind the mobile nav but above everything else */
+}
+
+/* When menu is open, show the overlay */
+.mobile-nav.open ~ .mobile-overlay {
+  display: block;
+}
