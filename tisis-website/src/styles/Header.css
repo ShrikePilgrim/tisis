@@ -40,13 +40,15 @@
   transform: scale(1.4);
 }
 
+/* Mobile Navigation Menu */
 .hamburger {
   display: none;
 }
 
 .hamburger-icon {
-    width: 40px;
-    height: 40px;
+  width: 40px;
+  height: 40px;
+  z-index: 100;
 }
 
 .mobile-nav {
@@ -61,7 +63,7 @@
 }
 
 .mobile-nav.open {
-  right: 0px;
+  right: 0;
 }
 
 .mobile-nav ul {
@@ -88,6 +90,18 @@
   transform: scale(1.4);
 }
 
+.mobile-overlay {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.8);
+  pointer-events: none;
+}
+
 /* Media queries */
 @media screen and (max-width: 1060px) {
   .logo {
@@ -95,8 +109,8 @@
   }
 
   .header {
-      justify-content: center;
-      width: 90%;
+    justify-content: center;
+    width: 90%;
   }
 
   .nav li {
@@ -137,20 +151,4 @@
   .mobile-nav {
     display: block;
   }
-}
-
-/* Mobile Overlay Styles */
-.mobile-overlay {
-  display: none; /* Hidden by default */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 99; /* Behind the mobile nav but above everything else */
-}
-
-/* When menu is open, show the overlay */
-.mobile-nav.open ~ .mobile-overlay {
-  display: block;
 }
