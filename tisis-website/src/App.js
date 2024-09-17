@@ -3,6 +3,7 @@ import backgroundVideo from './assets/videos/Final Cut.mp4';
 import './App.css';
 import Header from './components/Header';
 import Home from './components/Home';
+import Lore from './components/Lore';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
 
       <Header />
       <Home />
+      <Lore />
 
     </div>
   );
