@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    user-select: none;
 }
 
 .home {
@@ -26,8 +27,7 @@
     font-family: 'TreeLike', serif;
     font-size: 64px;
     color: var(--primary-color);
-    user-select: none;
-    text-shadow: 0 0 8px var(--primary-color);
+    text-shadow: 0 0 2px var(--primary-color);
 }
 
 .subtitle {
@@ -35,7 +35,7 @@
     font-size: 40px;
     color: var(--secondary-color);
     margin-top: 20px;
-    text-shadow: 0 0 8px var(--secondary-color);
+    text-shadow: 0 0 4px var(--secondary-color);
 }
 
 .watch-trailer {
