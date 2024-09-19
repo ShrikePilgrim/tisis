@@ -1,0 +1,126 @@
+.gallery {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.gallery-container {
+    width: 90vw;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+.gallery-title {
+    font-family: 'TreeLike', serif;
+    font-size: 64px;
+    color: var(--primary-color);
+    margin-bottom: 60px;
+    text-shadow: 0 0 2px var(--primary-color);
+}
+
+.carousel-item {
+    margin-top: 30px;
+    text-align: center;
+    border-radius: 12px;
+    max-width: 320px;
+}
+
+.image-wrapper {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.carousel-item-title {
+    font-family: 'PlayFair', serif;
+    font-size: 28px;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--secondary-color);
+    margin-top: 20px;
+    text-shadow: 0 0 2px var(--secondary-color);
+}
+
+.carousel-item-description {
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-top: 10px;
+    line-height: 24px;
+    text-shadow: 0 0 1px var(--text-color);
+}
+
+.fullscreen-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    cursor: pointer;
+}
+
+.fullscreen-image {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: cover;
+    border-radius: 12px;
+    background-color: var(--secondary-color);
+    box-shadow: 0 0 16px 4px var(--secondary-color);
+}
+
+.media-content {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    background-color: var(--secondary-color);
+    box-shadow: 0 0 16px 4px var(--secondary-color);
+    cursor: pointer;
+}
+
+.slick-prev:before, .slick-next:before {
+    color: var(--primary-color);
+    font-size: 34px;
+    text-shadow: 0 0 2px var(--primary-color);
+  }
+
+@media screen and (max-width: 510px) {
+    .gallery-title {
+        font-size: 48px;
+        margin-bottom: 26px;
+        margin-top: 50px;
+    }
+
+    .carousel-item {
+        max-width: 255px;
+        margin-top: 4px
+    }
+
+    .media-content {
+        box-shadow: 0 0 8px 4px var(--secondary-color);
+    }
+
+    .carousel-item-title {
+        font-size: 20px;
+        margin-top: 6px;
+        text-shadow: 0 0 3px var(--secondary-color);
+    }
+
+    .carousel-item-description {
+        font-size: 14px;
+        margin-top: 4px;
+        text-shadow: 0 0 1px var(--text-color);
+    }
+
+    .slick-prev:before, .slick-next:before {
+        font-size: 22px;
+        text-shadow: 0 0 2px var(--primary-color);
+      }
+  }
