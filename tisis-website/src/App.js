@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Home from './components/Home';
 import Lore from './components/Lore';
 import Gallery from './components/Gallery';
+import About from './components/About';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Home />
       <Lore />
       <Gallery />
+      <About />
 
     </div>
   );
