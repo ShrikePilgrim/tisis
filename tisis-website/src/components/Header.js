@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/Header.css';
-import hamDefault from '../assets/icons/hamDefault.svg';
-import hamClicked from '../assets/icons/hamClicked.svg';
+import hamDefault from '../assets/icons/header/hamDefault.svg';
+import hamClicked from '../assets/icons/header/hamClicked.svg';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);

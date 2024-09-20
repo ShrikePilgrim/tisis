@@ -1,0 +1,247 @@
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: calc(100vh - 120px);
+    width: 100%;
+    background: linear-gradient(0deg,
+        rgba(0, 0, 0, 0.0) 0%,
+        rgba(0, 0, 0, 0.2) 10%,
+        rgba(0, 0, 0, 0.3) 20%,
+        rgba(0, 0, 0, 0.8) 100%);
+    color: var(--text-color);
+}
+
+.contact-title {
+    font-family: 'TreeLike', serif;
+    font-size: 64px;
+    color: var(--primary-color);
+    text-shadow: 0 0 2px var(--primary-color);
+    margin-top: 40px;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    width: 100%;
+    padding: 0 10%;
+    margin-bottom: 120px;
+}
+
+.contact-left, .contact-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-left h2, .contact-right h2 {
+    font-family: 'Lora', serif;
+    font-size: 48px;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+    text-shadow: 0 0 2px var(--primary-color);
+}
+
+.contact-right {
+    margin-bottom: 106px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+}
+
+.contact-input, .contact-textarea {
+    width: 100%;
+    padding: 10px;
+    font-family: 'Lora', serif;
+    font-size: 18px;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    outline: none;
+    box-shadow: 0 0 16px 4px var(--secondary-color);
+}
+
+.contact-textarea {
+    height: 120px;
+}
+
+.contact-left{
+    width: fit-content;
+    margin-left: 30%;
+}
+
+.hover-submit:hover img {
+    content: url('../assets/icons/contact/submitHover.svg');
+}
+
+.contact-submit {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.contact-follow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.contact-follow img {
+    width: 90px;
+    height: 84px;
+    transition: transform 0.3s ease;
+}
+
+.contact-follow img:hover {
+    transform: scale(1.2);
+}
+
+.hover-x:hover {
+    content: url('../assets/icons/contact/xHover.svg');
+}
+
+.hover-linkedin:hover {
+    content: url('../assets/icons/contact/linkedInHover.svg');
+}
+
+.hover-youtube:hover {
+    content: url('../assets/icons/contact/youtubeHover.svg');
+}
+
+.sliding-notification {
+    position: fixed;
+    top: -100px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    background-color: var(--success-color);
+    color: var(--text-color);
+    padding: 20px;
+    font-family: 'Lora', serif;
+    font-size: 24px;
+    transition: top 0.5s ease;
+    z-index: 1000;
+}
+
+.sliding-notification.error {
+    background-color: red;
+}
+
+.sliding-notification.success {
+    background-color: var(--secondary-color);
+}
+
+.sliding-notification.show {
+    top: 0;
+}
+
+.contact-title {
+    font-family: 'TreeLike', serif;
+    font-size: 64px;
+    color: var(--primary-color);
+    text-shadow: 0 0 2px var(--primary-color);
+    margin-top: 40px;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    width: 100%;
+    padding: 0 10%;
+    margin-bottom: 120px;
+}
+
+.contact-left, .contact-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .contact-section {
+        height: auto;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+        padding: 0 40px;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .contact-title {
+        font-size: 48px;
+        margin-top: 0px;
+    }
+
+    .contact-left h2, .contact-right h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    .contact-form {
+        gap: 10px;
+    }
+
+    .contact-follow {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0px;
+    }
+
+    .contact-follow img {
+        width: 80px;
+        height: 64px;
+        transition: transform 0.3s ease;
+    }
+
+    .contact-right {
+        margin-bottom: 0px;
+    }
+
+    .contact-left {
+        margin-left: 0%;
+        margin-right: 0%;
+        width: auto;
+    }
+
+    .contact-input, .contact-textarea {
+        box-shadow: 0 0 4px 4px var(--secondary-color);
+    }
+}
+
+@media (hover: none) {
+    .hover-x:hover {
+        content: url('../assets/icons/contact/xDefault.svg');
+    }
+
+    .hover-linkedin:hover {
+        content: url('../assets/icons/contact/linkedInDefault.svg');
+    }
+
+    .hover-youtube:hover {
+        content: url('../assets/icons/contact/youtubeDefault.svg');
+    }
+
+    .hover-submit:hover img {
+        content: url('../assets/icons/contact/submitDefault.svg');
+    }
+
+    .contact-follow img:hover {
+        transform: scale(1.0);
+    }
+}

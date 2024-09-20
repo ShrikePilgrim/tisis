@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/Home.css';
+import arrowIcon from '../assets/icons/home/arrowIcon.svg';
 
 const Home = () => {
   return (
@@ -13,7 +14,7 @@ const Home = () => {
       </div>
 
       <div className="scroll-arrow">
-        <img src={require('../assets/icons/arrowIcon.svg').default} alt="Scroll Down" />
+        <img src={arrowIcon} alt="Scroll Down" />
       </div>
     </section>
   );

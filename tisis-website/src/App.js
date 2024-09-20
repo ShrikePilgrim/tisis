@@ -6,6 +6,8 @@ import Home from './components/Home';
 import Lore from './components/Lore';
 import Gallery from './components/Gallery';
 import About from './components/About';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
       <Lore />
       <Gallery />
       <About />
+      <Contact />
+      <Footer />
 
     </div>
   );
