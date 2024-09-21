@@ -17,13 +17,29 @@ function App() {
         Your browser does not support the video tag.
       </video>
 
-      <Header />
+      <div id="home">
+        <Header />
+      </div>
+
       <Home />
-      <Lore />
-      <Gallery />
-      <About />
+
+      <div id="lore">
+        <Lore />
+      </div>
+
+      <div id="gallery">
+        <Gallery />
+      </div>
+
+      <div id="about">
+        <About />
+      </div>
+
       <Contact />
-      <Footer />
+
+      <div id="contact">
+        <Footer />
+      </div>
 
     </div>
   );

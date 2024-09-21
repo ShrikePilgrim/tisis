@@ -17,6 +17,13 @@ const Header = () => {
     }
   };
 
+  const handleScroll = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 510);
@@ -46,11 +53,11 @@ const Header = () => {
 
             <nav className={`mobile-nav ${menuOpen ? 'open' : ''}`}>
               <ul>
-                <li><a href="#home" onClick={toggleMenu}>home</a></li>
-                <li><a href="#lore" onClick={toggleMenu}>lore</a></li>
-                <li><a href="#gallery" onClick={toggleMenu}>gallery</a></li>
-                <li><a href="#about" onClick={toggleMenu}>about</a></li>
-                <li><a href="#contact" onClick={toggleMenu}>contact</a></li>
+                <li><a onClick={() => { handleScroll('home'); toggleMenu(); }}>home</a></li>
+                <li><a onClick={() => { handleScroll('lore'); toggleMenu(); }}>lore</a></li>
+                <li><a onClick={() => { handleScroll('gallery'); toggleMenu(); }}>gallery</a></li>
+                <li><a onClick={() => { handleScroll('about'); toggleMenu(); }}>about</a></li>
+                <li><a onClick={() => { handleScroll('contact'); toggleMenu(); }}>contact</a></li>
               </ul>
             </nav>
 
@@ -59,11 +66,11 @@ const Header = () => {
         ) : (
           <nav className="nav">
             <ul>
-              <li><a href="#home">home</a></li>
-              <li><a href="#lore">lore</a></li>
-              <li><a href="#gallery">gallery</a></li>
-              <li><a href="#about">about</a></li>
-              <li><a href="#contact">contact</a></li>
+              <li><a onClick={() => handleScroll('home')}>home</a></li>
+              <li><a onClick={() => handleScroll('lore')}>lore</a></li>
+              <li><a onClick={() => handleScroll('gallery')}>gallery</a></li>
+              <li><a onClick={() => handleScroll('about')}>about</a></li>
+              <li><a onClick={() => handleScroll('contact')}>contact</a></li>
             </ul>
           </nav>
         )}
