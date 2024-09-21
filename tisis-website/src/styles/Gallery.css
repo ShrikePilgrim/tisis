@@ -1,5 +1,18 @@
 .gallery {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     background-color: rgba(0, 0, 0, 0.8);
+}
+
+.gallery-title {
+    font-family: 'TreeLike', serif;
+    font-size: 64px;
+    color: var(--primary-color);
+    margin-bottom: 6px;
+    text-shadow: 0 0 2px var(--primary-color);
+    align-self: center;
 }
 
 .gallery-container {
@@ -10,19 +23,20 @@
     text-align: center;
 }
 
-.gallery-title {
-    font-family: 'TreeLike', serif;
-    font-size: 64px;
-    color: var(--primary-color);
-    margin-bottom: 60px;
-    text-shadow: 0 0 2px var(--primary-color);
-}
-
 .carousel-item {
     margin-top: 30px;
     text-align: center;
     border-radius: 12px;
     max-width: 320px;
+    transition: transform 0.3s ease;
+}
+
+.carousel-item:hover {
+    transform: scale(1.05);
+}
+
+.carousel-spacing {
+    margin: 60px 0;
 }
 
 .image-wrapper {
@@ -49,6 +63,8 @@
     margin-top: 10px;
     line-height: 24px;
     text-shadow: 0 0 1px var(--text-color);
+    height: 5rem;
+    overflow: hidden;
 }
 
 .fullscreen-modal {
@@ -89,13 +105,13 @@
     color: var(--primary-color);
     font-size: 34px;
     text-shadow: 0 0 2px var(--primary-color);
-  }
+}
 
 @media screen and (max-width: 510px) {
     .gallery-title {
         font-size: 48px;
         margin-bottom: 2px;
-        margin-top: 50px;
+        margin-top: 60px;
     }
 
     .carousel-item {
@@ -116,10 +132,21 @@
         font-size: 14px;
         margin-top: 4px;
         text-shadow: 0 0 2px var(--text-color);
+        height: auto;
     }
 
     .slick-prev:before, .slick-next:before {
         font-size: 22px;
         text-shadow: 0 0 2px var(--primary-color);
-      }
-  }
+    }
+
+    .carousel-spacing {
+        margin: 20px 0;
+    }
+}
+
+@media (hover: none) {
+    .carousel-item:hover {
+        transform: none;
+    }
+}

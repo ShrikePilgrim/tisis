@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -52,6 +52,35 @@ function Gallery() {
     setFullscreenImage(null);
   };
 
+  useEffect(() => {
+    const preloadMedia = (src) => {
+      const media = new Image();
+      media.src = src;
+    };
+
+    preloadMedia(antarcticImage);
+    preloadMedia(temple2Image);
+    preloadMedia(bunker1Image);
+    preloadMedia(forest6Image);
+
+    preloadMedia(lake1Video);
+    preloadMedia(templeVideo);
+    preloadMedia(village1Video);
+    preloadMedia(forest2Video);
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, []);
+
+  useEffect(() => {
+    if (isFullscreen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  }, [isFullscreen]);
+
   const settings = {
     dots: false,
     infinite: true,
@@ -84,9 +113,9 @@ function Gallery() {
   };
 
   return (
-    <div className="gallery">
-      <div className="gallery-container">
-        <div className="gallery-title">gallery</div>
+    <section className="gallery">
+      <div className="gallery-title">gallery</div>
+        <div className="gallery-container">
 
         <Slider {...settings}>
 
@@ -190,7 +219,7 @@ function Gallery() {
           </div>
 
           <div className="carousel-item" key="asylum2Video">
-            <video className="media-content" controls preload="metadata">
+            <video className="media-content" controls preload="metadata" loading="lazy">
               <source src={asylum2Video} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
@@ -201,7 +230,7 @@ function Gallery() {
           </div>
 
           <div className="carousel-item" key="village2Video">
-            <video className="media-content" controls preload="metadata">
+            <video className="media-content" controls preload="metadata" loading="lazy">
               <source src={village2Video} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
@@ -212,7 +241,7 @@ function Gallery() {
           </div>
 
           <div className="carousel-item" key="asylum3Video">
-            <video className="media-content" controls preload="metadata">
+            <video className="media-content" controls preload="metadata" loading="lazy">
               <source src={asylum3Video} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
@@ -223,7 +252,7 @@ function Gallery() {
           </div>
 
           <div className="carousel-item" key="asylum4Video">
-            <video className="media-content" controls preload="metadata">
+            <video className="media-content" controls preload="metadata" loading="lazy">
               <source src={asylum4Video} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
@@ -274,7 +303,7 @@ function Gallery() {
 
           <div className="carousel-item" key="antarcticImage" onClick={() => handleImageClick(antarcticImage)}>
             <div className="image-wrapper">
-              <img src={antarcticImage} alt="Antarctic Expedition" className="media-content" loading="lazy"/>
+              <img src={antarcticImage} alt="Antarctic Expedition" className="media-content"/>
             </div>
             <div className="carousel-item-title">Antarctic Expedition</div>
             <div className="carousel-item-description">
@@ -284,7 +313,7 @@ function Gallery() {
 
           <div className="carousel-item" key="temple2Image" onClick={() => handleImageClick(temple2Image)}>
             <div className="image-wrapper">
-              <img src={temple2Image} alt="Antarctic Temple" className="media-content" loading="lazy"/>
+              <img src={temple2Image} alt="Antarctic Temple" className="media-content"/>
             </div>
             <div className="carousel-item-title">Antarctic Temple</div>
             <div className="carousel-item-description">
@@ -294,7 +323,7 @@ function Gallery() {
 
           <div className="carousel-item" key="bunker1Image" onClick={() => handleImageClick(bunker1Image)}>
             <div className="image-wrapper">
-              <img src={bunker1Image} alt="Bunker" className="media-content" loading="lazy"/>
+              <img src={bunker1Image} alt="Bunker" className="media-content"/>
             </div>
             <div className="carousel-item-title">Bunker</div>
             <div className="carousel-item-description">
@@ -304,7 +333,7 @@ function Gallery() {
 
           <div className="carousel-item" key="forest6Image" onClick={() => handleImageClick(forest6Image)}>
             <div className="image-wrapper">
-              <img src={forest6Image} alt="The Forest" className="media-content" loading="lazy"/>
+              <img src={forest6Image} alt="The Forest" className="media-content"/>
             </div>
             <div className="carousel-item-title">The Forest</div>
             <div className="carousel-item-description">
@@ -440,7 +469,7 @@ function Gallery() {
           </div>
         )}
       </div>
-    </div>
+    </section>
   );
 }
 
