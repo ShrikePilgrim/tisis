@@ -52,6 +52,39 @@ function Gallery() {
     setFullscreenImage(null);
   };
 
+  const handleFullscreenChange = () => {
+    const fullscreenElement = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement;
+    setIsFullscreen(!!fullscreenElement);
+  };
+
+  const handleVideoClick = (videoElement) => {
+    if (videoElement.requestFullscreen) {
+      videoElement.requestFullscreen();
+    } else if (videoElement.webkitRequestFullscreen) { // Safari support
+      videoElement.webkitRequestFullscreen();
+    } else if (videoElement.mozRequestFullScreen) { // Firefox support
+      videoElement.mozRequestFullScreen();
+    } else if (videoElement.msRequestFullscreen) { // IE/Edge support
+      videoElement.msRequestFullscreen();
+    }
+  };
+
+  useEffect(() => {
+    // Add fullscreen event listeners
+    document.addEventListener("fullscreenchange", handleFullscreenChange);
+    document.addEventListener("webkitfullscreenchange", handleFullscreenChange);
+    document.addEventListener("mozfullscreenchange", handleFullscreenChange);
+    document.addEventListener("MSFullscreenChange", handleFullscreenChange);
+
+    return () => {
+      // Clean up event listeners
+      document.removeEventListener("fullscreenchange", handleFullscreenChange);
+      document.removeEventListener("webkitfullscreenchange", handleFullscreenChange);
+      document.removeEventListener("mozfullscreenchange", handleFullscreenChange);
+      document.removeEventListener("MSFullscreenChange", handleFullscreenChange);
+    };
+  }, []);
+
   useEffect(() => {
     const preloadMedia = (src) => {
       const media = new Image();
@@ -120,7 +153,7 @@ function Gallery() {
         <Slider {...settings}>
 
           <div className="carousel-item" key="lake1video">
-            <video className="media-content" controls preload="metadata">
+          <video className={`media-content ${isFullscreen ? "fullscreen-video" : ""}`} controls preload="metadata" onClick={(e) => handleVideoClick(e.target)}>
               <source src={lake1Video} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
@@ -131,7 +164,7 @@ function Gallery() {
           </div>
 
           <div className="carousel-item" key="templeVideo">
-            <video className="media-content" controls preload="metadata">
+            <video className={`media-content ${isFullscreen ? "fullscreen-video" : ""}`} controls preload="metadata" onClick={(e) => handleVideoClick(e.target)}>
               <source src={templeVideo} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
@@ -142,7 +175,7 @@ function Gallery() {
           </div>
 
           <div className="carousel-item" key="village1Video">
-            <video className="media-content" controls preload="metadata">
+            <video className={`media-content ${isFullscreen ? "fullscreen-video" : ""}`} controls preload="metadata" onClick={(e) => handleVideoClick(e.target)}>
               <source src={village1Video} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
@@ -153,7 +186,7 @@ function Gallery() {
           </div>
 
           <div className="carousel-item" key="forest2Video">
-            <video className="media-content" controls preload="metadata">
+            <video className={`media-content ${isFullscreen ? "fullscreen-video" : ""}`} controls preload="metadata" onClick={(e) => handleVideoClick(e.target)}>
               <source src={forest2Video} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
@@ -164,7 +197,7 @@ function Gallery() {
           </div>
 
           <div className="carousel-item" key="asylum1Video">
-            <video className="media-content" controls preload="metadata">
+            <video className={`media-content ${isFullscreen ? "fullscreen-video" : ""}`} controls preload="metadata" onClick={(e) => handleVideoClick(e.target)}>
               <source src={asylum1Video} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
@@ -175,7 +208,7 @@ function Gallery() {
           </div>
 
           <div className="carousel-item" key="forest1Video">
-            <video className="media-content" controls preload="metadata">
+            <video className={`media-content ${isFullscreen ? "fullscreen-video" : ""}`} controls preload="metadata" onClick={(e) => handleVideoClick(e.target)}>
               <source src={forest1Video} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
@@ -186,7 +219,7 @@ function Gallery() {
           </div>
 
           <div className="carousel-item" key="hyadesVideo">
-            <video className="media-content" controls preload="metadata">
+            <video className={`media-content ${isFullscreen ? "fullscreen-video" : ""}`} controls preload="metadata" onClick={(e) => handleVideoClick(e.target)}>
               <source src={hyadesVideo} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
@@ -197,7 +230,7 @@ function Gallery() {
           </div>
 
           <div className="carousel-item" key="lake2Video">
-            <video className="media-content" controls preload="metadata">
+            <video className={`media-content ${isFullscreen ? "fullscreen-video" : ""}`} controls preload="metadata" onClick={(e) => handleVideoClick(e.target)}>
               <source src={lake2Video} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
@@ -208,7 +241,7 @@ function Gallery() {
           </div>
 
           <div className="carousel-item" key="expeditionVideo">
-            <video className="media-content" controls preload="metadata">
+            <video className={`media-content ${isFullscreen ? "fullscreen-video" : ""}`} controls preload="metadata" onClick={(e) => handleVideoClick(e.target)}>
               <source src={expeditionVideo} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
@@ -219,7 +252,7 @@ function Gallery() {
           </div>
 
           <div className="carousel-item" key="asylum2Video">
-            <video className="media-content" controls preload="metadata" loading="lazy">
+            <video className={`media-content ${isFullscreen ? "fullscreen-video" : ""}`} controls preload="metadata" onClick={(e) => handleVideoClick(e.target)}>
               <source src={asylum2Video} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
@@ -230,7 +263,7 @@ function Gallery() {
           </div>
 
           <div className="carousel-item" key="village2Video">
-            <video className="media-content" controls preload="metadata" loading="lazy">
+            <video className={`media-content ${isFullscreen ? "fullscreen-video" : ""}`} controls preload="metadata" onClick={(e) => handleVideoClick(e.target)}>
               <source src={village2Video} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
@@ -241,7 +274,7 @@ function Gallery() {
           </div>
 
           <div className="carousel-item" key="asylum3Video">
-            <video className="media-content" controls preload="metadata" loading="lazy">
+            <video className={`media-content ${isFullscreen ? "fullscreen-video" : ""}`} controls preload="metadata" onClick={(e) => handleVideoClick(e.target)}>
               <source src={asylum3Video} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
@@ -252,7 +285,7 @@ function Gallery() {
           </div>
 
           <div className="carousel-item" key="asylum4Video">
-            <video className="media-content" controls preload="metadata" loading="lazy">
+            <video className={`media-content ${isFullscreen ? "fullscreen-video" : ""}`} controls preload="metadata" onClick={(e) => handleVideoClick(e.target)}>
               <source src={asylum4Video} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
@@ -263,7 +296,7 @@ function Gallery() {
           </div>
 
           <div className="carousel-item" key="bunkerVideo">
-            <video className="media-content" controls preload="metadata">
+            <video className={`media-content ${isFullscreen ? "fullscreen-video" : ""}`} controls preload="metadata" onClick={(e) => handleVideoClick(e.target)}>
               <source src={bunkerVideo} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
@@ -274,7 +307,7 @@ function Gallery() {
           </div>
 
           <div className="carousel-item" key="nightfallVideo">
-            <video className="media-content" controls preload="metadata">
+            <video className={`media-content ${isFullscreen ? "fullscreen-video" : ""}`} controls preload="metadata" onClick={(e) => handleVideoClick(e.target)}>
               <source src={nightfallVideo} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
@@ -285,7 +318,7 @@ function Gallery() {
           </div>
 
           <div className="carousel-item" key="village3Video">
-            <video className="media-content" controls preload="metadata">
+            <video className={`media-content ${isFullscreen ? "fullscreen-video" : ""}`} controls preload="metadata" onClick={(e) => handleVideoClick(e.target)}>
               <source src={village3Video} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
