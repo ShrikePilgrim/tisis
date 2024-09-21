@@ -17,6 +17,16 @@ const Header = () => {
   };
 
   useEffect(() => {
+    const preloadImage = (src) => {
+      const img = new Image();
+      img.src = src;
+    };
+
+    preloadImage(hamDefault);
+    preloadImage(hamClicked);
+  }, []);
+
+  useEffect(() => {
     const handleScroll = () => {
       if (menuOpen && isMobile) {
         setMenuOpen(false);
