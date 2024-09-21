@@ -62,7 +62,7 @@
     margin-bottom: 50px;
 }
 
-@media screen and (max-width: 510px) {
+@media screen and (max-width: 550px) {
     .home {
         height: calc(100vh - 118px);
     }
