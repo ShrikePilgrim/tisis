@@ -87,6 +87,7 @@
 
 @media (hover: none) {
     .watch-trailer:hover {
-        background-image: url('../assets/icons/home/watchTrailerDefault.svg'); /* Keep it in default state for mobile browsers */
+      background-image: url('../assets/icons/home/watchTrailerDefault.svg');
+      transform: none;
     }
 }

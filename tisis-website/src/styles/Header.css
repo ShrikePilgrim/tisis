@@ -127,3 +127,10 @@
     align-items: flex-end;
   }
 }
+
+@media (hover: none) {
+  .nav a:hover, .mobile-menu a:hover {
+    color: inherit;
+    transform: none;
+  }
+}

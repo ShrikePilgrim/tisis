@@ -95,3 +95,10 @@
     text-indent: 12rem;
   }
 }
+
+@media (hover: none) {
+  .lore-pair:hover .lore-image {
+    transform: none;
+    box-shadow: none;
+  }
+}

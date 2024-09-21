@@ -147,6 +147,6 @@
 
 @media (hover: none) {
     .carousel-item:hover {
-        transform: none;
+      transform: none;
     }
 }
