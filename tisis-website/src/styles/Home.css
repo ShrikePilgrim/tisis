@@ -49,11 +49,12 @@
     background-position: center;
     text-indent: -9999px; /* For screen-reader access */
     cursor: pointer;
-    transition: background-image 0.3s ease;
+    transition: background-image 0.3s ease, transform 0.3s ease;
 }
 
 .watch-trailer:hover {
     background-image: url('../assets/icons/home/watchTrailerHover.svg');
+    transform: scale(1.1);
 }
 
 .scroll-arrow img {
@@ -62,7 +63,7 @@
     margin-bottom: 50px;
 }
 
-@media screen and (max-width: 510px) {
+@media screen and (max-width: 550px) {
     .home {
         height: calc(100vh - 118px);
     }

@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../styles/Home.css';
 import arrowIcon from '../assets/icons/home/arrowIcon.svg';
 
 const Home = () => {
+  useEffect(() => {
+    const preloadImage = (src) => {
+      const img = new Image();
+      img.src = src;
+    };
+
+    preloadImage(require('../assets/icons/home/arrowIcon.svg'));
+    preloadImage(require('../assets/icons/home/watchTrailerDefault.svg'));
+    preloadImage(require('../assets/icons/home/watchTrailerHover.svg'));
+  }, []);
+
   return (
     <section className="home">
       <div className="home-content">
