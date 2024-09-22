@@ -1,4 +1,4 @@
-.about-container {
+.about {
     background-color: rgba(0, 0, 0, 0.8);
     color: var(--text-color);
     text-align: center;
@@ -85,7 +85,7 @@
         text-shadow: 0 0 2px var(--text-color);
     }
 
-    .about-container {
+    .about {
         padding-left: 20px;
         padding-right: 20px;
     }
