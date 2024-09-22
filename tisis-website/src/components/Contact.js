@@ -62,7 +62,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="contact-section">
+    <div className="contact">
       <div className={`sliding-notification ${notification.show ? 'show' : ''} ${notification.isError ? 'error' : 'success'}`}>
         {notification.message}
       </div>
