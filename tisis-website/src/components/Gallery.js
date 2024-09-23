@@ -4,6 +4,7 @@ import LazyLoad from 'react-lazyload';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../styles/Gallery.css";
+import placeholderImage from '../assets/images/loadingPlaceholder.png';
 
 import lake1Video from "../assets/videos/lake1.mp4";
 import templeVideo from "../assets/videos/temple.mp4";
@@ -56,6 +57,10 @@ function Gallery() {
   const handleFullscreenChange = () => {
     const fullscreenElement = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement;
     setIsFullscreen(!!fullscreenElement);
+  };
+
+  const handleImageError = (event) => {
+    event.target.src = placeholderImage;
   };
 
   const handleVideoClick = (videoElement) => {
@@ -310,7 +315,12 @@ function Gallery() {
         ) : (
           <LazyLoad height={200} offset={100} once>
             <div className="image-wrapper" onClick={() => handleImageClick(item.src)}>
-              <img src={item.src} alt={item.title} className="media-content" />
+              <img
+                src={item.src}
+                alt={item.title}
+                className="media-content"
+                onError={handleImageError}  // Handle image loading errors
+              />
             </div>
           </LazyLoad>
         )}
