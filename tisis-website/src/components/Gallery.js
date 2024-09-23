@@ -55,7 +55,10 @@ function Gallery() {
   };
 
   const handleFullscreenChange = () => {
-    const fullscreenElement = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement;
+    const fullscreenElement = document.fullscreenElement ||
+      document.webkitFullscreenElement ||
+      document.mozFullScreenElement ||
+      document.msFullscreenElement;
     setIsFullscreen(!!fullscreenElement);
   };
 
@@ -98,7 +101,7 @@ function Gallery() {
   }, [isFullscreen]);
 
   const settings = {
-    dots: true,  // Enable dots
+    dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 4,
@@ -319,7 +322,7 @@ function Gallery() {
                 src={item.src}
                 alt={item.title}
                 className="media-content"
-                onError={handleImageError}  // Handle image loading errors
+                onError={handleImageError}
               />
             </div>
           </LazyLoad>
