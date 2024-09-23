@@ -18,11 +18,11 @@ const Footer = () => {
 
         <nav className="footer-nav">
           <ul>
-            <li><a onClick={() => handleScroll('home')}>home</a></li>
-            <li><a onClick={() => handleScroll('lore')}>lore</a></li>
-            <li><a onClick={() => handleScroll('gallery')}>gallery</a></li>
-            <li><a onClick={() => handleScroll('about')}>about</a></li>
-            <li><a onClick={() => handleScroll('contact')}>contact</a></li>
+            <li><a href="#home" onClick={(e) => { e.preventDefault(); handleScroll('home'); }}>home</a></li>
+            <li><a href="#lore" onClick={(e) => { e.preventDefault(); handleScroll('lore'); }}>lore</a></li>
+            <li><a href="#gallery" onClick={(e) => { e.preventDefault(); handleScroll('gallery'); }}>gallery</a></li>
+            <li><a href="#about" onClick={(e) => { e.preventDefault(); handleScroll('about'); }}>about</a></li>
+            <li><a href="#contact" onClick={(e) => { e.preventDefault(); handleScroll('contact'); }}>contact</a></li>
           </ul>
         </nav>
       </div>
