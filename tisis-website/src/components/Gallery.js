@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
+import LazyLoad from 'react-lazyload';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../styles/Gallery.css";
@@ -295,19 +296,23 @@ function Gallery() {
     return (
       <div className="carousel-item" key={`${isVideo ? 'video' : 'image'}-${index}`}>
         {isVideo ? (
-          <video
-            className={`media-content ${isFullscreen ? 'fullscreen-video' : ''}`}
-            controls
-            preload="metadata"
-            onClick={(e) => handleVideoClick(e.target)}
-          >
-            <source src={item.src} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <LazyLoad height={200} offset={100} once>
+            <video
+              className={`media-content ${isFullscreen ? 'fullscreen-video' : ''}`}
+              controls
+              preload="metadata"
+              onClick={(e) => handleVideoClick(e.target)}
+            >
+              <source src={item.src} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </LazyLoad>
         ) : (
-          <div className="image-wrapper" onClick={() => handleImageClick(item.src)}>
-            <img src={item.src} alt={item.title} className="media-content" />
-          </div>
+          <LazyLoad height={200} offset={100} once>
+            <div className="image-wrapper" onClick={() => handleImageClick(item.src)}>
+              <img src={item.src} alt={item.title} className="media-content" />
+            </div>
+          </LazyLoad>
         )}
         <div className="carousel-item-title">{item.title}</div>
         <div className="carousel-item-description">{item.description}</div>
