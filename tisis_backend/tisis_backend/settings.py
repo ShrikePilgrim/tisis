@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-0z*z=l2p@!iikliu6^**6z=m(tm)76*xky3qmqn2bj%@bq8r01'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.elasticbeanstalk.com', 'tisis-game.com', 'www.tisis-game.com']
 
 
 # Application definition
@@ -78,11 +79,14 @@ WSGI_APPLICATION = 'tisis_backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'contact_messages',
+        'USER': 'admin',
+        'PASSWORD': 'K3ls!3r11111993',
+        'HOST': 'tisis-django-db.czsa6cyoelzm.eu-central-1.rds.amazonaws.com',
+        'PORT': '3306',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -129,8 +133,5 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",  # Adjust this for the React development server
 ]
 
-STATICFILES_DIRS = [
-    BASE_DIR / 'frontend/build/static',  # Adjust this to the location of your React build files
-]
-
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
