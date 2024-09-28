@@ -43,7 +43,7 @@
 }
 
 .carousel-item:hover {
-    transform: scale(1.05);
+    transform: none;
 }
 
 .carousel-item-title {
@@ -114,6 +114,47 @@
     opacity: 1;
 }
 
+.thumbnail-wrapper {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.thumbnail-wrapper:hover {
+    transform: scale(1.05);
+}
+
+.button-overlay {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: background-image 0.1s;
+    border-radius: 6px;
+}
+
+.play-button {
+    background-image: url('../assets/images/thumbnails/playDefault.svg');
+}
+
+.open-button {
+    background-image: url('../assets/images/thumbnails/openDefault.svg');
+}
+
+/* Hover effects for buttons */
+.thumbnail-wrapper:hover .play-button {
+    background-image: url('../assets/images/thumbnails/playHover.svg');
+}
+
+.thumbnail-wrapper:hover .open-button {
+    background-image: url('../assets/images/thumbnails/openHover.svg');
+}
+
 @media screen and (max-width: 510px) {
     .gallery-title {
         font-size: 48px;
@@ -151,7 +192,20 @@
 }
 
 @media (hover: none) {
-    .carousel-item:hover {
-      transform: none;
+    .thumbnail-wrapper {
+        transform: none !important;
+        transition: none !important;
+    }
+
+    .button-overlay {
+        transition: none !important;
+    }
+
+    .play-button {
+        background-image: url('../assets/images/thumbnails/playDefault.svg') !important;
+    }
+
+    .open-button {
+        background-image: url('../assets/images/thumbnails/openDefault.svg') !important;
     }
 }
