@@ -1,5 +1,5 @@
 import React from 'react';
-import backgroundVideo from './assets/videos/Final Cut.mp4';
+import backgroundVideo from './assets/videos/Final Cut.webm';
 import './App.css';
 import Header from './components/Header';
 import Home from './components/Home';

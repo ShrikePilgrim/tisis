@@ -4,63 +4,62 @@ import LazyLoad from 'react-lazyload';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../styles/Gallery.css";
-import placeholderImage from '../assets/images/loadingPlaceholder.png';
+import placeholderImage from '../assets/images/loadingPlaceholder.webp';
 
-import lake1Video from "../assets/videos/lake1.mp4";
-import templeVideo from "../assets/videos/temple.mp4";
-import village1Video from "../assets/videos/village1.mp4";
-import forest2Video from "../assets/videos/forest2.mp4";
-import asylum1Video from "../assets/videos/asylum1.mp4";
-import forest1Video from "../assets/videos/forest1.mp4";
-import hyadesVideo from "../assets/videos/hyades.mp4";
-import lake2Video from "../assets/videos/lake2.mp4";
-import expeditionVideo from "../assets/videos/expedition.mp4";
-import asylum2Video from "../assets/videos/asylum2.mp4";
-import village2Video from "../assets/videos/village2.mp4";
-import asylum3Video from "../assets/videos/asylum3.mp4";
-import asylum4Video from "../assets/videos/asylum4.mp4";
-import bunkerVideo from "../assets/videos/bunker.mp4";
-import nightfallVideo from "../assets/videos/nightfall.mp4";
-import village3Video from "../assets/videos/village3.mp4";
+import lake1Video from "../assets/videos/lake1.webm";
+import templeVideo from "../assets/videos/temple.webm";
+import village1Video from "../assets/videos/village1.webm";
+import forest2Video from "../assets/videos/forest2.webm";
+import asylum1Video from "../assets/videos/asylum1.webm";
+import forest1Video from "../assets/videos/forest1.webm";
+import hyadesVideo from "../assets/videos/hyades.webm";
+import lake2Video from "../assets/videos/lake2.webm";
+import expeditionVideo from "../assets/videos/expedition.webm";
+import asylum2Video from "../assets/videos/asylum2.webm";
+import village2Video from "../assets/videos/village2.webm";
+import asylum3Video from "../assets/videos/asylum3.webm";
+import asylum4Video from "../assets/videos/asylum4.webm";
+import bunkerVideo from "../assets/videos/bunker.webm";
+import nightfallVideo from "../assets/videos/nightfall.webm";
+import village3Video from "../assets/videos/village3.webm";
 
-import asylum1Thumbnail from "../assets/images/thumbnails/asylum1Thumbnail.png";
-import asylum2Thumbnail from "../assets/images/thumbnails/asylum2Thumbnail.png";
-import asylum3Thumbnail from "../assets/images/thumbnails/asylum3Thumbnail.png";
-import asylum4Thumbnail from "../assets/images/thumbnails/asylum4Thumbnail.png";
-import bunkerThumbnail from "../assets/images/thumbnails/bunkerThumbnail.png";
-import expeditionThumbnail from "../assets/images/thumbnails/expeditionThumbnail.png";
-import forest1Thumbnail from "../assets/images/thumbnails/forest1Thumbnail.png";
-import forest2Thumbnail from "../assets/images/thumbnails/forest2Thumbnail.png";
-import hyadesThumbnail from "../assets/images/thumbnails/hyadesThumbnail.png";
-import lake1Thumbnail from "../assets/images/thumbnails/lake1Thumbnail.png";
-import lake2Thumbnail from "../assets/images/thumbnails/lake2Thumbnail.png";
-import nightfallThumbnail from "../assets/images/thumbnails/nightfallThumbnail.png";
-import templeThumbnail from "../assets/images/thumbnails/templeThumbnail.png";
-import village1Thumbnail from "../assets/images/thumbnails/village1Thumbnail.png";
-import village2Thumbnail from "../assets/images/thumbnails/village2Thumbnail.png";
-import village3Thumbnail from "../assets/images/thumbnails/village3Thumbnail.png";
+import asylum1Thumbnail from "../assets/images/thumbnails/asylum1Thumbnail.webp";
+import asylum2Thumbnail from "../assets/images/thumbnails/asylum2Thumbnail.webp";
+import asylum3Thumbnail from "../assets/images/thumbnails/asylum3Thumbnail.webp";
+import asylum4Thumbnail from "../assets/images/thumbnails/asylum4Thumbnail.webp";
+import bunkerThumbnail from "../assets/images/thumbnails/bunkerThumbnail.webp";
+import expeditionThumbnail from "../assets/images/thumbnails/expeditionThumbnail.webp";
+import forest1Thumbnail from "../assets/images/thumbnails/forest1Thumbnail.webp";
+import forest2Thumbnail from "../assets/images/thumbnails/forest2Thumbnail.webp";
+import hyadesThumbnail from "../assets/images/thumbnails/hyadesThumbnail.webp";
+import lake1Thumbnail from "../assets/images/thumbnails/lake1Thumbnail.webp";
+import lake2Thumbnail from "../assets/images/thumbnails/lake2Thumbnail.webp";
+import nightfallThumbnail from "../assets/images/thumbnails/nightfallThumbnail.webp";
+import templeThumbnail from "../assets/images/thumbnails/templeThumbnail.webp";
+import village1Thumbnail from "../assets/images/thumbnails/village1Thumbnail.webp";
+import village2Thumbnail from "../assets/images/thumbnails/village2Thumbnail.webp";
+import village3Thumbnail from "../assets/images/thumbnails/village3Thumbnail.webp";
 
-import antarcticImage from "../assets/images/gallery/expedition8.png";
-import temple2Image from "../assets/images/gallery/temple2.png";
-import bunker1Image from "../assets/images/gallery/bunker1.png";
-import forest6Image from "../assets/images/gallery/forest6.png";
-import lake3Image from "../assets/images/gallery/lake3.png";
-import asylum2Image from "../assets/images/gallery/asylum2.png";
-import village6Image from "../assets/images/gallery/village6.png";
-import expedition1Image from "../assets/images/gallery/expedition1.jpg";
-import bunker6Image from "../assets/images/gallery/bunker6.png";
-import forest4Image from "../assets/images/gallery/forest4.png";
-import village8Image from "../assets/images/gallery/village8.png";
-import asylum8Image from "../assets/images/gallery/asylum8.png";
-import village11Image from "../assets/images/gallery/village11.png";
-import forest2Image from "../assets/images/gallery/forest2.png";
-import asylum5Image from "../assets/images/gallery/asylum5.png";
-import village12Image from "../assets/images/gallery/village12.png";
+import antarcticImage from "../assets/images/gallery/expedition8.webp";
+import temple2Image from "../assets/images/gallery/temple2.webp";
+import bunker1Image from "../assets/images/gallery/bunker1.webp";
+import forest6Image from "../assets/images/gallery/forest6.webp";
+import lake3Image from "../assets/images/gallery/lake3.webp";
+import asylum2Image from "../assets/images/gallery/asylum2.webp";
+import village6Image from "../assets/images/gallery/village6.webp";
+import expedition1Image from "../assets/images/gallery/expedition1.webp";
+import bunker6Image from "../assets/images/gallery/bunker6.webp";
+import forest4Image from "../assets/images/gallery/forest4.webp";
+import village8Image from "../assets/images/gallery/village8.webp";
+import asylum8Image from "../assets/images/gallery/asylum8.webp";
+import village11Image from "../assets/images/gallery/village11.webp";
+import forest2Image from "../assets/images/gallery/forest2.webp";
+import asylum5Image from "../assets/images/gallery/asylum5.webp";
+import village12Image from "../assets/images/gallery/village12.webp";
 
 function Gallery() {
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [fullscreenImage, setFullscreenImage] = useState(null);
-
   const [loadedVideos, setLoadedVideos] = useState([]);
   const videoRefs = useRef({});
 
@@ -356,7 +355,7 @@ function Gallery() {
               controls
               preload="metadata"
             >
-              <source src={item.src} type="video/mp4" />
+              <source src={item.src} type="video/webm" />
               Your browser does not support the video tag.
             </video>
           ) : (

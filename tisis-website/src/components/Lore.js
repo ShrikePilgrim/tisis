@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import '../styles/Lore.css';
-import carcosa from '../assets/images/lore/carcosa.jpg';
-import hyades from '../assets/images/lore/hyades.png';
-import lakeHali from '../assets/images/lore/lakeHali.png';
-import nightfall from '../assets/images/lore/nightfall.png';
+import carcosa from '../assets/images/lore/carcosa.webp';
+import hyades from '../assets/images/lore/hyades.webp';
+import lakeHali from '../assets/images/lore/lakeHali.webp';
+import nightfall from '../assets/images/lore/nightfall.webp';
 
 const Lore = () => {
   useEffect(() => {

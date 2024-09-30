@@ -1,8 +1,8 @@
 import React from 'react';
 import '../styles/About.css';
-import kingsLegacyImage from '../assets/images/about/kingsLegacy.png';
-import surviveMadnessImage from '../assets/images/about/surviveMadness.png';
-import behindVeilImage from '../assets/images/about/behindVeil.png';
+import kingsLegacyImage from '../assets/images/about/kingsLegacy.webp';
+import surviveMadnessImage from '../assets/images/about/surviveMadness.webp';
+import behindVeilImage from '../assets/images/about/behindVeil.webp';
 
 const About = () => {
   return (

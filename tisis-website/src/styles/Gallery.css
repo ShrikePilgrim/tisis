@@ -134,7 +134,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    transition: background-image 0.1s;
+    transition: background-image 0.3s;
     border-radius: 6px;
 }
 
